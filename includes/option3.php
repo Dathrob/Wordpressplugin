@@ -1,4 +1,4 @@
-<h1>option3<h1>
+<h1>Style 3<h1>
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <div class="footer-social-icons">
     <ul class="social-icons1">

@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <h1>option 1</h1>
+  <h1>Style 1</h1>
   <div class ="frame">
     <a href="#" class="btn">
  <i class="fab fa-facebook-f" style="color: #3b5998;"></i>

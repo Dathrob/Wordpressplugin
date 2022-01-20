@@ -1,4 +1,4 @@
-<h1>option4<h1>
+<h1>Style 4<h1>
 <div class="social-container">
     <ul class="social-icons">
         <li><a href="#"><i class="fa fa-instagram"></i></a></li>

@@ -1,4 +1,4 @@
-<h1>option2<h1>
+<h1>Style 2<h1>
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 <br/>
 <div align="center" class="socialbtns">
