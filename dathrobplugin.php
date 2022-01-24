@@ -50,9 +50,38 @@ function dathrob_main(){
   
  function dathrob_setting(){
 	add_settings_section('social_section',null,null,'dathrob_social_setting');
-	add_settings_field('style_selection','Select Style',array($this,'style'),'dathrob_social_setting','social_section');
-	register_setting('social_addresses','style_selection',array('santize_callback' => 'santize_text_field','default' =>'0'));
+	add_settings_section('sample_section',null,null,'dathrob_social_setting');
 
+	add_settings_field('facebook_uri','Facebook URI',array($this,'facebook'),'dathrob_social_setting','social_section');
+	register_setting('social_addresses','facebook_uri',array('santize_callback' => 'santize_text_field','default' =>"https://www.facebook.com"));
+
+	add_settings_field('instagram_uri','Instagram URI',array($this,'instagram'),'dathrob_social_setting','social_section');
+	register_setting('social_addresses','instagram_uri',array('santize_callback' => 'santize_text_field','default' =>"https://www.instagram.com"));
+
+	add_settings_field('twitter_uri','Twitter URI',array($this,'twitter'),'dathrob_social_setting','social_section');
+	register_setting('social_addresses','twitter_uri',array('santize_callback' => 'santize_text_field','default' =>"https://www.twitter.com"));
+
+	add_settings_field('telegram_uri','Telegram URI',array($this,'telegram'),'dathrob_social_setting','social_section');
+	register_setting('social_addresses','telegram_uri',array('santize_callback' => 'santize_text_field','default' =>"https://www.telegram.com"));
+
+	add_settings_field('github_uri','Github URI',array($this,'github'),'dathrob_social_setting','social_section');
+	register_setting('social_addresses','github_uri',array('santize_callback' => 'santize_text_field','default' =>"https://www.github.com"));
+
+	add_settings_field('style_selection','Select Style',array($this,'style'),'dathrob_social_setting','social_section');
+	register_setting('social_addresses','style_selection',array('santize_callback' => 'santize_text_field','default' =>'1'));
+
+	add_settings_field('style_selection','choose from these styles',array($this,'stylesample'),'dathrob_social_setting','sample_section');
+
+}
+function stylesample(){
+	include_once plugin_dir_path(__FILE__) .'includes/option1.php';
+    wp_enqueue_style( 'myCSS', plugin_dir_url(__FILE__) .'assets/css/option1.css');
+	include_once plugin_dir_path(__FILE__) .'includes/option2.php';
+    wp_enqueue_style( 'myCSS2', plugin_dir_url(__FILE__) .'assets/css/option2.css');
+	include_once plugin_dir_path(__FILE__) .'includes/option3.php';
+    wp_enqueue_style( 'myCSS3', plugin_dir_url(__FILE__) .'assets/css/option3.css');
+	include_once plugin_dir_path(__FILE__) .'includes/option4.php';
+    wp_enqueue_style( 'myCSS4', plugin_dir_url(__FILE__) .'assets/css/option4.css');
 }
 
 function style(){ ?>
@@ -64,17 +93,26 @@ function style(){ ?>
 	</select> 
 <?php
 }
-function instagram(){
+function facebook(){?>
+<input type="text" name="facebook_uri" value="<?php echo esc_attr(get_option('facebook_uri'))?>">
+<?php
 
 }
-function twitter(){
-
+function instagram(){?>
+	<input type="text" name="instagram_uri" value="<?php echo esc_attr(get_option('instagram_uri'))?>">
+	<?php
 }
-function telegram(){
-
+function twitter(){?>
+	<input type="text" name="twitter_uri" value="<?php echo esc_attr(get_option('twitter_uri'))?>">
+	<?php
 }
-function github(){
-
+function telegram(){?>
+	<input type="text" name="telegram_uri" value="<?php echo esc_attr(get_option('telegram_uri'))?>">
+	<?php
+}
+function github(){?>
+	<input type="text" name="github_uri" value="<?php echo esc_attr(get_option('github_uri'))?>">
+	<?php
 }
 
 function addLayout(){?>
