@@ -5,7 +5,7 @@
 * Plugin URI: http://github.com/dathrob1
 * Description: This plugin is developed for plugin replacement assignment 
 * Version: 1.0.0
-* Author: Misganaw ME.
+* Author: Misganaw ME.	x
 * License: GPL2
 */
 
@@ -28,7 +28,7 @@ class Dathrobplugin
  }
 
  function dathrob_social(){
-	 add_menu_page('dathrobsocial','dathrob social','manage_options','dathrob_menu',array($this,'addLayout'),'dashicons-share-alt2',100);
+	 add_menu_page('dathrobsocial','dathrob social','manage_options','dathrob_social_setting',array($this,'addLayout'),'dashicons-share-alt2',100);
 }
 function dathrob_main(){
 	
@@ -49,39 +49,42 @@ function dathrob_main(){
 }
   
  function dathrob_setting(){
-	add_settings_section('dathrob_social_section','SOCIAL ADDRESSES',null,'dathrob_social_setting');
-	add_settings_section('dathrob_sample_section','STYLE SAMPLES',null,'dathrob_social_setting');
+	add_settings_section('social_section',null,null,'dathrob_social_setting');
+	add_settings_field('style_selection','Select Style',array($this,'style'),'dathrob_social_setting','social_section');
+	register_setting('social_addresses','style_selection',array('santize_callback' => 'santize_text_field','default' =>'0'));
 
-	add_settings_field('dathrob_social','Enter ur social addresses here!',array($this,'typeHTML'),'dathrob_social_setting','dathrob_social_section');
-	add_settings_field('dathrob_social','here are the style types',array($this,'dathrob_main'),'dathrob_social_setting','dathrob_sample_section');
-	//add_options_page('Welcome to Dathrob Social','dathrob setting','manage options','dathrob-social-setting',array($this,'addLayout'));
-}
-function typeHTML(){?>
-	<style>
-input{
-	margin:10px;
 }
 
-	</style>
-	<label for="fname">Facebook URI:</label>
-  <input type="text" id="facebook_uri" name="facebook"><br>
-  <label for="fname">Instagram URI:</label>
-  <input type="text" id="instagram_uri" name="instagram"><br>
-  <label for="fname">Twitter URI:</label>
-  <input type="text" id="twitter_uri" name="twitter"><br>
-  <label for="fname">Telegram URI:</label>
-  <input type="text" id="telegram_uri" name="telegram"><br>
-  <label for="fname">Github URI:</label>
-  <input type="text" id="github_uri" name="github">
-<?php }
+function style(){ ?>
+	<select name="style_selection" >
+		<option value="1"<?php selected(get_option('style_selection'),'1') ?>>Style 1</option>
+		<option value="2"<?php selected(get_option('style_selection'),'2') ?>>Style 2</option>
+		<option value="3"<?php selected(get_option('style_selection'),'3') ?>>Style 3</option>
+		<option value="4"<?php selected(get_option('style_selection'),'4') ?>>Style 4</option>
+	</select> 
+<?php
+}
+function instagram(){
+
+}
+function twitter(){
+
+}
+function telegram(){
+
+}
+function github(){
+
+}
+
 function addLayout(){?>
 	<div class="wrap">
-		<h1>Dathrob Social</h1>
+		<h1>Dathrob Social Settings</h1>
 		<form action="options.php" method="POST">
-			<?php
-				settings_fields('Dathrob Social');
-				do_settings_sections('dathrob_social_setting');
-				submit_button();
+			<?php 
+			settings_fields('social_addresses');
+			do_settings_sections('dathrob_social_setting');
+			submit_button();
 			?>
 		</form>
 	</div>
