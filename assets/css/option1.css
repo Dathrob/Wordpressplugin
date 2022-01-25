@@ -1,16 +1,18 @@
 .stickysidebar{
-	width:80%;
+left: -3%;
+ position: fixed;
+ top: 30%;
 }
 .stickysidebar::after{
 	display:  table;
 	content: "";
 	clear:both;
+	text-decoration: none;
+	
 	
 }
 .stickysidebar .dsocial-media{
-	width:100%;
-	padding-top: 100px;
-	margin: 0 0 40px;
+	text-decoration: none;
 	float: left;
 	position: fixed;
 }
