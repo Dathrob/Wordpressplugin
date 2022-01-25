@@ -3,7 +3,7 @@
 <br/>
 <div align="center" class="socialbtns">
 <ul>
-<li><a href="#" class="fa fa-lg fa-facebook"></a></li>
+<li><a href="<?php get_option('facebook_uri')?>" class="fa fa-lg fa-facebook"></a></li>
 <li><a href="#" class="fa fa-lg fa-twitter"></a></li>
 <li><a href="#" class="fa fa-lg fa-google-plus"></a></li>
 <li><a href="#" class="fa fa-lg fa-github"></a></li>

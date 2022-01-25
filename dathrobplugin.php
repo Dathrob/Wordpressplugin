@@ -20,7 +20,10 @@ class Dathrobplugin
 		add_action('init',array( $this,'dathrob_social_post_type'));
 		add_action('admin_menu',array($this,'dathrob_social'));
 		add_action('admin_init',array($this,'dathrob_setting'));
+		add_filter('the_content',array($this,'display'));
+
 	}
+
 
 
  function dathrob_social_post_type() { 
@@ -30,24 +33,7 @@ class Dathrobplugin
  function dathrob_social(){
 	 add_menu_page('dathrobsocial','dathrob social','manage_options','dathrob_social_setting',array($this,'addLayout'),'dashicons-share-alt2',100);
 }
-function dathrob_main(){
-	
-	
-	echo '
-	<h1>Welcome to Dathrob social</h1>';
-	include_once plugin_dir_path(__FILE__) .'includes/option1.php';
-	wp_enqueue_style( 'option1css', plugin_dir_url(__FILE__) .'assets/css/option1.css');
-	include_once plugin_dir_path(__FILE__) .'includes/option2.php';
-	wp_enqueue_style( 'option2css', plugin_dir_url(__FILE__) .'assets/css/option2.css');
-	include_once plugin_dir_path(__FILE__) .'includes/option3.php';
-	wp_enqueue_style( 'option3css', plugin_dir_url(__FILE__) .'assets/css/option3.css');
-	include_once plugin_dir_path(__FILE__) .'includes/option4.php';
-	wp_enqueue_style( 'option4css', plugin_dir_url(__FILE__) .'assets/css/option4.css');
-	
 
-	
-}
-  
  function dathrob_setting(){
 	add_settings_section('social_section',null,null,'dathrob_social_setting');
 	add_settings_section('sample_section',null,null,'dathrob_social_setting');
@@ -82,6 +68,30 @@ function stylesample(){
     wp_enqueue_style( 'myCSS3', plugin_dir_url(__FILE__) .'assets/css/option3.css');
 	include_once plugin_dir_path(__FILE__) .'includes/option4.php';
     wp_enqueue_style( 'myCSS4', plugin_dir_url(__FILE__) .'assets/css/option4.css');
+}
+
+function display($content){
+	if(get_option('style_selection','1' == '1')){
+		return $this->createHTML($content);
+}
+	return $content;
+}
+function createHTML($content){
+	$html ='<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+	<br/>
+	<h1>this is from the content<h1>
+	<div align="center" class="socialbtns">
+	<ul>
+	<li><a href="'. get_option('facebook_uri').'"class="fa fa-lg fa-facebook"></a></li>
+	<li><a href="'. get_option('twitter_uri').'" class="fa fa-lg fa-twitter"></a></li>
+	<li><a href="'. get_option('github_uri').'" class="fa fa-lg fa-github"></a></li>
+	<li><a href="'. get_option('telegram_uri').'" class="fa fa-lg fa-telegram"></a></li>
+	<li><a href="'. get_option('instagram_uri').'" class="fa fa-lg fa-instagram"></a></li>
+	</ul>
+	</div>
+	';
+    wp_enqueue_style( 'myCSS', plugin_dir_url(__FILE__) .'assets/css/option2.css');
+	return $content.$html;
 }
 
 function style(){ ?>
