@@ -60,8 +60,8 @@ class Dathrobplugin
 
 }
 function stylesample(){
-	include_once plugin_dir_path(__FILE__) .'includes/option1.php';
-    wp_enqueue_style( 'myCSS', plugin_dir_url(__FILE__) .'assets/css/option1.css');
+	//include_once plugin_dir_path(__FILE__) .'includes/option1.php';
+    //wp_enqueue_style( 'myCSS', plugin_dir_url(__FILE__) .'assets/css/option1.css');
 	include_once plugin_dir_path(__FILE__) .'includes/option2.php';
     wp_enqueue_style( 'myCSS2', plugin_dir_url(__FILE__) .'assets/css/option2.css');
 	include_once plugin_dir_path(__FILE__) .'includes/option3.php';
@@ -71,14 +71,17 @@ function stylesample(){
 }
 
 function display($content){
-	if(get_option('style_selection','1' == '1')){
-		return $this->createHTML($content);
+	if(get_option('style_selection','1') == '1'){
+		return $this->style1($content);}
+	if(get_option('style_selection','1') == '2'){
+		return $this->style1($content);}
+	else if(get_option('style_selection','3')== '3'){
+		return $this->style1($content);}
+	return $this->style1($content);
 }
-	return $content;
-}
-function createHTML($content){
+function style2($content){
 	$html ='<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-	<br/>
+	<br/>	
 	<h1>this is from the content<h1>
 	<div align="center" class="socialbtns">
 	<ul>
@@ -93,6 +96,49 @@ function createHTML($content){
     wp_enqueue_style( 'myCSS', plugin_dir_url(__FILE__) .'assets/css/option2.css');
 	return $content.$html;
 }
+function style1($content){
+	$html2 = '
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+	<link rel="stylesheet" href="./style.css"> 
+	  <body class="dstyle1body">
+	   
+	   <ul id="social-sidebar">
+		<li>
+		  <a class="entypo-twitter"><span>Tweeter</span></a>
+		</li>
+		<li>
+		  <a class="entypo-facebook"><span>Facebook</span></a>
+		</li>
+		<li>
+		  <a class="entypo-gplus"><span>Google+</span></a>
+		</li>
+		<li>
+		  <a class="entypo-dribbble"><span>Dribbble</span></a>
+		</li>
+		<li>
+		  <a class="entypo-dropbox"><span>Dropbox</span></a>
+		</li>
+		<li>
+		  <a class="entypo-github"><span>Github</span></a>
+		</li>
+		<li>
+		  <a class="entypo-evernote"><span>Evernote</span></a>
+		</li>
+	  </ul>
+	   
+	  </body>';
+  wp_enqueue_style( 'myCSS1', plugin_dir_url(__FILE__) .'assets/css/option1.css');
+	return $content.$html2;
+}
+function style3($content){
+	$html = '<h1>this is style 3 <h1>';
+	return $content.$html;
+}
+function style4($content){
+	$html = '<h1>this is style 4 <h1>';
+	return $content.$html;
+}
+
 
 function style(){ ?>
 	<select name="style_selection" >

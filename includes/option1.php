@@ -1,27 +1,32 @@
 <head>
-<link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Fixed Social Sidebar | Webdevtrick.com</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 </head>
-
 <body>
-  <h1>Style 1</h1>
-  <div class ="frame">
-    <a href="<?php get_option('facebook_uri')?>" class="btn">
- <i class="fab fa-facebook-f" style="color: #3b5998;"></i>
-</a>
-    <a href="<?php get_option('facebook_uri')?>" class="btn">
-  <i class="fab fa-twitter" style="color: #00acee;"></i>
-</a>
-    <a href="#" class="btn">
- <i class="fab fa-dribbble" style="color: #ea4c89;"></i>
-</a>
-    <a href="#" class="btn">
- <i class="fab fa-linkedin-in" style="color:#0e76a8;"></i>
-</a>
-    <a href="<?php get_option('instagram_uri')?>" class="btn">
- <i class="fab fa-get-pocket" style="color:#ee4056;"></i>
-</a>
-    <a href="<?php get_option('instagram_uri')?>" class="btn">
- <i class="far fa-envelope"></i>
-</a>
-</div>
+ 
+ <ul id="social-sidebar">
+  <li>
+    <a class="entypo-twitter"><span>Tweeter</span></a>
+  </li>
+  <li>
+    <a class="entypo-facebook"><span>Facebook</span></a>
+  </li>
+  <li>
+    <a class="entypo-gplus"><span>Google+</span></a>
+  </li>
+  <li>
+    <a class="entypo-dribbble"><span>Dribbble</span></a>
+  </li>
+  <li>
+    <a class="entypo-dropbox"><span>Dropbox</span></a>
+  </li>
+  <li>
+    <a class="entypo-github"><span>Github</span></a>
+  </li>
+  <li>
+    <a class="entypo-evernote"><span>Evernote</span></a>
+  </li>
+</ul>
+ 
 </body>
