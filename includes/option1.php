@@ -1,32 +1,10 @@
-<head>
-  <meta charset="UTF-8">
-  <title>Fixed Social Sidebar | Webdevtrick.com</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-</head>
-<body>
- 
- <ul id="social-sidebar">
-  <li>
-    <a class="entypo-twitter"><span>Tweeter</span></a>
-  </li>
-  <li>
-    <a class="entypo-facebook"><span>Facebook</span></a>
-  </li>
-  <li>
-    <a class="entypo-gplus"><span>Google+</span></a>
-  </li>
-  <li>
-    <a class="entypo-dribbble"><span>Dribbble</span></a>
-  </li>
-  <li>
-    <a class="entypo-dropbox"><span>Dropbox</span></a>
-  </li>
-  <li>
-    <a class="entypo-github"><span>Github</span></a>
-  </li>
-  <li>
-    <a class="entypo-evernote"><span>Evernote</span></a>
-  </li>
-</ul>
- 
-</body>
+<div class="stickysidebar">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <ul class="dsocial-media">
+        <li><a  href="#" class="dicon"><i class="fab fa-facebook fa-3x"></i></a></li>
+        <li><a href="#" class="dicon"><i class="fab fa-twitter fa-3x"></i></a></li>
+        <li><a href="#" class="dicon"><i class="fab fa-instagram fa-3x"></i></a></li>
+        <li><a href="#" class="dicon"><i class="fab fa-google fa-3x"></i></a></li>
+        <li><a href="#" class="dicon"><i class="fab fa-youtube fa-3x"></i></a></li>
+      </ul>
+</div>
