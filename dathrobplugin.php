@@ -97,9 +97,9 @@ function style2($content){
 	return $content.$html;
 }
 function style1($content){
-	$html2 = include_once plugin_dir_path(__FILE__) .'includes/option1.php';
-  wp_enqueue_style( 'myCSS1', plugin_dir_url(__FILE__) .'assets/css/option1.css');
-	return $content.$html2;
+	$html = include_once plugin_dir_path(__FILE__) .'includes/option1.php';
+  	wp_enqueue_style( 'myCSS1', plugin_dir_url(__FILE__) .'assets/css/option1.css');
+	return $content.$html;
 }
 function style3($content){
 	$html = include_once plugin_dir_path(__FILE__) .'includes/option3.php';
