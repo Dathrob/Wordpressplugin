@@ -1,15 +1,12 @@
-<h1>Style 2<h1>
 <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-<br/>
-<div align="center" class="socialbtns">
-<ul>
-<li><a href="<?php get_option('facebook_uri')?>" class="fa fa-lg fa-facebook"></a></li>
-<li><a href="#" class="dathrob fa-lg fa-twitter"></a></li>
-<li><a href="#" class="dathrob fa-lg fa-google-plus"></a></li>
-<li><a href="#" class="dathrob fa-lg fa-github"></a></li>
-<li><a href="#" class="dathrob fa-lg fa-pinterest"></a></li>
-<li><a href="#" class="dathrob fa-lg fa-linkedin"></a></li>
-<li><a href="#" class="dathrob fa-lg fa-instagram"></a></li>
-<li><a href="#" class="dathrob fa-lg fa-youtube"></a></li>
-</ul>
-</div>
+	<br/>	
+	<h1>this is from the content<h1>
+	<div align="center" class="socialbtns">
+	<ul>
+	<li><a href="'. get_option('facebook_uri').'"class="fa fa-lg fa-facebook"></a></li>
+	<li><a href="'. get_option('twitter_uri').'" class="fa fa-lg fa-twitter"></a></li>
+	<li><a href="'. get_option('github_uri').'" class="fa fa-lg fa-github"></a></li>
+	<li><a href="'. get_option('telegram_uri').'" class="fa fa-lg fa-telegram"></a></li>
+	<li><a href="'. get_option('instagram_uri').'" class="fa fa-lg fa-instagram"></a></li>
+	</ul>
+	</div>
