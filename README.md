@@ -1,3 +1,3 @@
 # Wordpressplugin
-repo for replacement assignment
+sidebar share icons plugin for Wordpress
 # Looks better on no sidebar websites :)
